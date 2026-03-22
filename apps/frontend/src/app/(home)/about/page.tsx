@@ -247,14 +247,27 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="relative aspect-[16/9] w-full overflow-hidden">
-            <Image
-              src="/images/team.webp"
-              alt="The bapX team"
-              fill
-              className="object-cover object-top"
-              priority
-            />
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border bg-gradient-to-br from-primary/10 to-purple-500/10">
+            <svg
+              viewBox="0 0 1200 675"
+              className="w-full h-full"
+              preserveAspectRatio="xMidYMid slice"
+            >
+              <defs>
+                <linearGradient id="aboutGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style={{ stopColor: '#6366f1', stopOpacity: 1 }} />
+                  <stop offset="100%" style={{ stopColor: '#8b5cf6', stopOpacity: 1 }} />
+                </linearGradient>
+              </defs>
+              <rect width="1200" height="675" fill="url(#aboutGrad)" />
+              <g transform="translate(600, 337.5)" opacity="0.3">
+                <circle cx="0" cy="0" r="120" fill="white" />
+                <g stroke="white" strokeWidth="12" strokeLinecap="round">
+                  <line x1="-50" y1="-50" x2="50" y2="50" />
+                  <line x1="50" y1="-50" x2="-50" y2="50" />
+                </g>
+              </g>
+            </svg>
           </div>
         </motion.figure>
 

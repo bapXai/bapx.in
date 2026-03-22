@@ -8,18 +8,18 @@ Build, manage, and train sophisticated AI agents for any use case. Create powerf
 
 [![Discord Follow](https://dcbadge.limes.pink/api/server/RvFhXUdZ9H?style=flat)](https://discord.com/invite/RvFhXUdZ9H)
 [![Twitter Follow](https://img.shields.io/twitter/follow/kortix)](https://x.com/kortix)
-[![GitHub Repo stars](https://img.shields.io/github/stars/kortix-ai/suna)](https://github.com/kortix-ai/suna)
-[![Issues](https://img.shields.io/github/issues/kortix-ai/suna)](https://github.com/kortix-ai/suna/labels/bug)
+[![GitHub Repo stars](https://img.shields.io/github/stars/bapXai/bapXagent)](https://github.com/bapXai/bapXagent)
+[![Issues](https://img.shields.io/github/issues/bapXai/bapXagent)](https://github.com/bapXai/bapXagent/labels/bug)
 
 <!-- Keep these links. Translations will automatically update with the README. -->
-[Deutsch](https://www.readme-i18n.com/kortix-ai/suna?lang=de) | 
-[Español](https://www.readme-i18n.com/kortix-ai/suna?lang=es) | 
-[français](https://www.readme-i18n.com/kortix-ai/suna?lang=fr) | 
-[日本語](https://www.readme-i18n.com/kortix-ai/suna?lang=ja) | 
-[한국어](https://www.readme-i18n.com/kortix-ai/suna?lang=ko) | 
-[Português](https://www.readme-i18n.com/kortix-ai/suna?lang=pt) | 
-[Русский](https://www.readme-i18n.com/kortix-ai/suna?lang=ru) | 
-[中文](https://www.readme-i18n.com/kortix-ai/suna?lang=zh)
+[Deutsch](https://www.readme-i18n.com/bapXai/bapXagent?lang=de) | 
+[Español](https://www.readme-i18n.com/bapXai/bapXagent?lang=es) | 
+[français](https://www.readme-i18n.com/bapXai/bapXagent?lang=fr) | 
+[日本語](https://www.readme-i18n.com/bapXai/bapXagent?lang=ja) | 
+[한국어](https://www.readme-i18n.com/bapXai/bapXagent?lang=ko) | 
+[Português](https://www.readme-i18n.com/bapXai/bapXagent?lang=pt) | 
+[Русский](https://www.readme-i18n.com/bapXai/bapXagent?lang=ru) | 
+[中文](https://www.readme-i18n.com/bapXai/bapXagent?lang=zh)
 
 ![bapX Screenshot](apps/frontend/public/banner.png)
 </div>
@@ -149,8 +149,8 @@ Get your bapX platform running in minutes with our automated setup wizard:
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/kortix-ai/suna.git
-cd suna
+git clone https://github.com/bapXai/bapXagent.git
+cd bapX
 ```
 
 ### 2️⃣ Run the Setup Wizard
