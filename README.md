@@ -7,21 +7,21 @@
 Build, manage, and train sophisticated AI agents for any use case. Create powerful agents that act autonomously on your behalf.
 
 [![Discord Follow](https://dcbadge.limes.pink/api/server/RvFhXUdZ9H?style=flat)](https://discord.com/invite/RvFhXUdZ9H)
-[![Twitter Follow](https://img.shields.io/twitter/follow/kortix)](https://x.com/kortix)
+[![Twitter Follow](https://img.shields.io/twitter/follow/bapXai)](https://x.com/bapXai)
 [![GitHub Repo stars](https://img.shields.io/github/stars/bapXai/bapXagent)](https://github.com/bapXai/bapXagent)
 [![Issues](https://img.shields.io/github/issues/bapXai/bapXagent)](https://github.com/bapXai/bapXagent/labels/bug)
 
 <!-- Keep these links. Translations will automatically update with the README. -->
-[Deutsch](https://www.readme-i18n.com/bapXai/bapXagent?lang=de) | 
-[Español](https://www.readme-i18n.com/bapXai/bapXagent?lang=es) | 
-[français](https://www.readme-i18n.com/bapXai/bapXagent?lang=fr) | 
-[日本語](https://www.readme-i18n.com/bapXai/bapXagent?lang=ja) | 
-[한국어](https://www.readme-i18n.com/bapXai/bapXagent?lang=ko) | 
-[Português](https://www.readme-i18n.com/bapXai/bapXagent?lang=pt) | 
-[Русский](https://www.readme-i18n.com/bapXai/bapXagent?lang=ru) | 
+[Deutsch](https://www.readme-i18n.com/bapXai/bapXagent?lang=de) |
+[Español](https://www.readme-i18n.com/bapXai/bapXagent?lang=es) |
+[français](https://www.readme-i18n.com/bapXai/bapXagent?lang=fr) |
+[日本語](https://www.readme-i18n.com/bapXai/bapXagent?lang=ja) |
+[한국어](https://www.readme-i18n.com/bapXai/bapXagent?lang=ko) |
+[Português](https://www.readme-i18n.com/bapXai/bapXagent?lang=pt) |
+[Русский](https://www.readme-i18n.com/bapXai/bapXagent?lang=ru) |
 [中文](https://www.readme-i18n.com/bapXai/bapXagent?lang=zh)
 
-![bapX Screenshot](apps/frontend/public/banner.png)
+![bapX Banner](apps/frontend/public/bapx-banner.svg)
 </div>
 
 
