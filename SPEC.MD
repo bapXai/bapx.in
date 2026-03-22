@@ -413,11 +413,46 @@ grep -r "function Navbar" ./apps/frontend/src
 ✅ Need new feature? CHECK if it exists first
 ```
 
+## ✅ Best Practices (ALWAYS DO THIS)
+
+### 1. Search First, Code Second ✅
+```bash
+# Before writing ANY code:
+grep -r "Navbar" ./apps/frontend/src/components
+find ./apps/frontend/src -name "*nav*"
+grep -r "function Navbar" ./apps/frontend/src
+```
+
+### 2. Modify, Don't Duplicate ✅
+```
+✅ Found existing Navbar? MODIFY it
+✅ Found similar component? EXTEND it
+✅ Need new feature? CHECK if it exists first
+```
+
 ### 3. Follow Existing Patterns ✅
 ```
 ✅ Use existing component structure
 ✅ Follow established naming conventions
 ✅ Match existing code style
+```
+
+### 4. Branding Rules ✅
+```
+✅ Company: "bapXai" (NOT "kortix", "Kortix")
+✅ Product: "bapX" (NOT "suna", "Suna")
+✅ Repository: "bapXai/bapXagent" (NOT "kortix-ai/suna")
+✅ Social: "@bapXai" (NOT "@kortix")
+✅ No emojis in UI - use SVG icons only
+✅ Use consistent icon style (stroke-width: 2)
+```
+
+### 5. UI/UX Standards ✅
+```
+✅ Compare with reference sites (e.g., kortix.com)
+✅ Use proper SVG icons instead of emojis
+✅ Use SVG covers instead of photos when possible
+✅ Maintain consistent spacing and typography
 ```
 
 ---
