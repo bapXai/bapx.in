@@ -74,8 +74,11 @@ See `docs/ADMIN_PANEL.md` for complete documentation.
 
 | Service | URL | Purpose |
 |---------|-----|---------|
+| **Homepage** | https://bapx.in | Landing page (public) |
 | Frontend | https://bapx.in | Main UI |
+| Auth | https://bapx.in/auth | Login/signup (public) |
 | Backend API | https://bapx.in/v1 | REST API |
+| Dashboard | https://bapx.in/dashboard | User dashboard (requires auth) |
 | Trailbase Public | http://localhost:4000 | User auth & DB |
 | Trailbase Admin | http://localhost:8081 | Admin only |
 
