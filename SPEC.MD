@@ -331,24 +331,37 @@ NEXT_PUBLIC_USER_SUPABASE_ANON_KEY=
    - ❌ NEVER modify `/root/Dev` (indoglobalservices.in)
    - ❌ NEVER modify other projects
 
-3. **Test:** Always test if UI is live at `https://bapx.in` before making changes.
+3. **⚠️ CRITICAL: Check for Existing Components (NO DUPLICATES)**
+   ```bash
+   # Before creating ANY new component, search for existing ones
+   find ./apps/frontend/src/components -name "*component-name*"
+   grep -r "component-name" ./apps/frontend/src --include="*.tsx" --include="*.ts"
+   ```
+   **Rules:**
+   - ❌ NEVER create duplicate components (e.g., second navbar, second footer)
+   - ✅ ALWAYS use existing components if they exist
+   - ✅ MODIFY existing components instead of creating new ones
+   - ✅ Search entire codebase before adding "new features"
+
+4. **Test:** Always test if UI is live at `https://bapx.in` before making changes.
    ```bash
    curl -sI https://bapx.in
    curl -s https://bapx.in/v1/health
    ```
 
-4. **Check Console:** Always check Next.js console for errors after changes.
+5. **Check Console:** Always check Next.js console for errors after changes.
    - **React Components:** Must use PascalCase (e.g., `BapXLogo`, not `bapXLogo`)
    - **HTML Elements:** Must use lowercase (e.g., `div`, not `Div`)
+   - **NO DUPLICATE NAVBARS:** Only ONE navbar component in entire app
    ```bash
    tail -f /root/Agent/frontend.log
    ```
 
-5. **Patch:** Apply SaaS guardrails to `terminal.py` and `prompt.py` first.
+6. **Patch:** Apply SaaS guardrails to `terminal.py` and `prompt.py` first.
 
-6. **Build:** Implement the RLMExecutor and BapxProxy modules.
+7. **Build:** Implement the RLMExecutor and BapxProxy modules.
 
-7. **Commit:** After every change:
+8. **Commit:** After every change:
    ```bash
    cd /root/Agent
    git add .
@@ -356,7 +369,56 @@ NEXT_PUBLIC_USER_SUPABASE_ANON_KEY=
    git push origin main
    ```
 
-8. **Verify:** Test UI at `https://bapx.in` after deployment.
+9. **Verify:** Test UI at `https://bapx.in` after deployment.
+
+---
+
+## 🚫 Anti-Patterns (NEVER DO THIS)
+
+### 1. Duplicate Components ❌
+```
+❌ Creating new Navbar when /components/home/navbar.tsx exists
+❌ Creating new Footer when one already exists
+❌ Creating duplicate auth flows
+```
+
+### 2. Magic Features Without Research ❌
+```
+❌ Adding "new feature" without checking if it exists
+❌ Creating new API endpoints without checking existing ones
+❌ Building something that already exists in the codebase
+```
+
+### 3. Not Checking File Structure ❌
+```
+❌ Creating files without checking folder structure
+❌ Ignoring existing component architecture
+❌ Not following established patterns
+```
+
+## ✅ Best Practices (ALWAYS DO THIS)
+
+### 1. Search First, Code Second ✅
+```bash
+# Before writing ANY code:
+grep -r "Navbar" ./apps/frontend/src/components
+find ./apps/frontend/src -name "*nav*"
+grep -r "function Navbar" ./apps/frontend/src
+```
+
+### 2. Modify, Don't Duplicate ✅
+```
+✅ Found existing Navbar? MODIFY it
+✅ Found similar component? EXTEND it
+✅ Need new feature? CHECK if it exists first
+```
+
+### 3. Follow Existing Patterns ✅
+```
+✅ Use existing component structure
+✅ Follow established naming conventions
+✅ Match existing code style
+```
 
 ---
 
