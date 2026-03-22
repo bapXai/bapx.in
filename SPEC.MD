@@ -49,6 +49,27 @@
 - Configured via `NEXT_PUBLIC_USER_SUPABASE_URL` (empty by default)
 - This is for integrations only, not core platform auth
 
+### Admin Panel
+
+**YES - Comprehensive Admin Panel Available**
+
+1. **Trailbase Admin UI** (Database & Auth)
+   - URL: `http://localhost:8081`
+   - Purpose: Database management, user auth admin
+   - Access: Admin key (`vn2gVGUvxLMs9w5cwYK6`)
+
+2. **Suna Admin Dashboard** (Application Admin)
+   - URL: `https://bapx.in/admin/*`
+   - Pages: Feedback, Analytics, Notifications, Utils, Sandbox Pool, Stateless, Stress Test
+   - Access: Requires `admin` or `super_admin` role
+
+3. **Admin APIs**
+   - Location: `/root/Agent/backend/core/admin/`
+   - Auth: `X-Admin-Api-Key` header or user role
+   - 9 admin modules with full CRUD operations
+
+See `docs/ADMIN_PANEL.md` for complete documentation.
+
 ### Service URLs
 
 | Service | URL | Purpose |
