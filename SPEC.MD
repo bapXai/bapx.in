@@ -355,16 +355,38 @@ NEXT_PUBLIC_USER_SUPABASE_ANON_KEY=
 
 ---
 
-## 11. Admin Credentials
+## 11. Admin Credentials & Login
 
-**Trailbase Admin:**
-- URL: `http://localhost:8081`
-- Admin Key: `vn2gVGUvxLMs9w5cwYK6`
-- ⚠️ **ACTION REQUIRED:** Change in production!
+### User Login (Admins Use Same Login)
+- **URL:** `https://bapx.in/auth`
+- **Credentials:** Email + Password (same as regular users)
+- **Admin Access:** Granted via `admin` role in `user_roles` table
 
-**Backend Admin API:**
-- Header: `X-Admin-Api-Key: <KORTIX_ADMIN_API_KEY>`
-- Auto-generated (check backend logs)
+### Trailbase Admin (Database Level)
+- **URL:** `http://localhost:8081`
+- **Admin Key:** `vn2gVGUvxLMs9w5cwYK6`
+- **⚠️ ACTION REQUIRED:** Change in production!
+
+### Backend Admin API
+- **Header:** `X-Admin-Api-Key: <KORTIX_ADMIN_API_KEY>`
+- **Auto-generated:** Check backend logs or `/root/Agent/backend/.env`
+
+### Create First Admin User
+See `docs/ADMIN_LOGIN.md` for complete setup instructions.
+
+**Quick Setup:**
+```bash
+# 1. Create user account
+curl -X POST http://localhost:4000/api/auth/v1/register \
+  -H "Content-Type: application/json" \
+  -d '{"email": "admin@bapx.in", "password": "SecurePass123!", "password_repeat": "SecurePass123!"}'
+
+# 2. Grant admin role (via SQLite)
+sqlite3 /root/Agent/traildepot/data/main.db \
+  "INSERT INTO user_roles (user_id, role) VALUES ('<user-id>', 'admin');"
+
+# 3. Login at https://bapx.in/auth
+```
 
 ---
 
