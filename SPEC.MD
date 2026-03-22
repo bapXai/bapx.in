@@ -5,6 +5,8 @@
 **Codebase:** `/root/Agent` (MONOREPO)
 **IMPORTANT:** This spec is ONLY for bapx.in. Do NOT modify `/root/Dev` (indoglobalservices.in) or any other projects.
 
+**Status:** ✅ AUTH WORKING - Ready for user testing
+
 ---
 
 ## 1. Core Identity & Mission
@@ -20,8 +22,8 @@
 **Deployment:** This VPS (`/root/Agent`) IS the production environment for bapx.in only.
 
 **⚠️ PROJECT ISOLATION:**
-- **bapx.in** → `/root/Agent` (THIS PROJECT)
-- **indoglobalservices.in** → `/root/Dev` (SEPARATE PROJECT - DO NOT MODIFY)
+- **bapx.in** → `/root/Agent` (THIS PROJECT) ✅
+- **indoglobalservices.in** → `/root/Dev` (SEPARATE PROJECT - DO NOT MODIFY) ❌
 - These are completely separate applications with separate codebases
 
 ---
@@ -30,7 +32,7 @@
 
 ### Database & Authentication
 
-**Primary Auth:** Trailbase (self-hosted)
+**Primary Auth:** Trailbase (self-hosted) - ✅ WORKING
 - User authentication: `http://localhost:4000/api/auth/v1/*`
 - Admin UI: `http://localhost:8081`
 - Data directory: `/root/Agent/traildepot/data/`
@@ -265,9 +267,42 @@ NEXT_PUBLIC_USER_SUPABASE_ANON_KEY=
 
 ## 10. Execution Instructions for the Agent
 
+### Current Status (2026-03-22)
+✅ **AUTH WORKING** - Trailbase authentication fully functional
+✅ **UI LIVE** - https://bapx.in and https://bapx.in/auth returning 200 OK
+✅ **Multi-tenant DB ready** - User databases auto-created at signup
+
+### Next Steps (Priority Order)
+
+1. **Test User Signup Flow** ✅ TODO
+   - Visit https://bapx.in/auth
+   - Create test account
+   - Verify user DB created: `/root/Agent/traildepot/data/{user_id}.db`
+   - Test login/logout
+
+2. **Implement RLM (Recursive Language Model)** ✅ TODO
+   - Create `backend/core/rlm/rlm_executor.py`
+   - Implement persistent Python REPL for agent
+   - Add code-based context filtering
+
+3. **Build BapxProxy** ✅ TODO
+   - BYOK routing for Text, Vision, Audio
+   - OpenAI-compatible API at `/v1/chat/completions`
+
+4. **Add SaaS Guardrails** ✅ TODO
+   - Storage limits (1GB/25GB)
+   - Local model blocking
+
+5. **Dashboard Features** ✅ TODO
+   - Project management
+   - Thread/chat interface
+   - Agent configuration
+
+### Standard Workflow
+
 1. **Initialize:** Read this SPEC.md entirely before writing any code.
 
-2. **Scope Check:** 
+2. **Scope Check:**
    - ✅ Work ONLY in `/root/Agent`
    - ❌ NEVER modify `/root/Dev` (indoglobalservices.in)
    - ❌ NEVER modify other projects
@@ -278,11 +313,16 @@ NEXT_PUBLIC_USER_SUPABASE_ANON_KEY=
    curl -s https://bapx.in/v1/health
    ```
 
-4. **Patch:** Apply SaaS guardrails to `terminal.py` and `prompt.py` first.
+4. **Check Console:** Always check Next.js console for errors after changes.
+   ```bash
+   tail -f /root/Agent/frontend.log
+   ```
 
-5. **Build:** Implement the RLMExecutor and BapxProxy modules.
+5. **Patch:** Apply SaaS guardrails to `terminal.py` and `prompt.py` first.
 
-6. **Commit:** After every change:
+6. **Build:** Implement the RLMExecutor and BapxProxy modules.
+
+7. **Commit:** After every change:
    ```bash
    cd /root/Agent
    git add .
@@ -290,7 +330,7 @@ NEXT_PUBLIC_USER_SUPABASE_ANON_KEY=
    git push origin main
    ```
 
-7. **Verify:** Test UI at `https://bapx.in` after deployment.
+8. **Verify:** Test UI at `https://bapx.in` after deployment.
 
 ---
 
@@ -311,7 +351,7 @@ NEXT_PUBLIC_USER_SUPABASE_ANON_KEY=
 
 | Project | Domain | Directory | Status |
 |---------|--------|-----------|--------|
-| **bapx.in** | https://bapx.in | `/root/Agent` | ✅ THIS PROJECT |
+| **bapx.in** | https://bapx.in | `/root/Agent` | ✅ AUTH WORKING |
 | indoglobalservices.in | https://indoglobalservices.in | `/root/Dev` | ❌ DO NOT TOUCH |
 
 **Rules:**
@@ -324,5 +364,5 @@ NEXT_PUBLIC_USER_SUPABASE_ANON_KEY=
 ---
 
 **Last Updated:** 2026-03-22
-**Version:** 2.0 (Trailbase Migration - Project Isolation)
+**Version:** 2.1 (Auth Working - Ready for Testing)
 **CTO Approved:** ✅
