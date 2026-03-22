@@ -155,7 +155,8 @@ export function Navbar({ isAbsolute = false }: NavbarProps) {
             {/* Left Section - Logo */}
             <div className="flex items-center justify-start flex-shrink-0">
               <Link href="/" className="flex items-center gap-3">
-                <BapXLogo size={18} variant='logomark' />
+                <BapXLogo size={28} variant='logomark' />
+                <span className="text-2xl font-bold text-foreground hidden sm:inline-block">bapX</span>
               </Link>
             </div>
 
@@ -211,7 +212,7 @@ export function Navbar({ isAbsolute = false }: NavbarProps) {
               {user ? (
                 <Link
                   href="/dashboard"
-                  className="h-8 px-4 text-sm font-medium rounded-lg bg-foreground text-background hover:bg-foreground/90 transition-colors inline-flex items-center justify-center"
+                  className="h-10 px-6 text-sm font-semibold rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors inline-flex items-center justify-center shadow-md"
                 >
                   Dashboard
                 </Link>
@@ -219,7 +220,7 @@ export function Navbar({ isAbsolute = false }: NavbarProps) {
                 <Link
                   href={ctaLink}
                   onClick={() => trackCtaSignup()}
-                  className="h-8 px-4 text-sm font-medium rounded-lg bg-foreground text-background hover:bg-foreground/90 transition-colors inline-flex items-center justify-center"
+                  className="h-10 px-6 text-sm font-semibold rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors inline-flex items-center justify-center shadow-md"
                   suppressHydrationWarning
                 >
                   {t('tryFree')}

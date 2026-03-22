@@ -40,13 +40,13 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a
                   href="/auth"
-                  className="w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-xl text-lg font-semibold hover:bg-primary/90 transition-all hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="w-full sm:w-auto px-8 py-4 bg-primary text-white rounded-xl text-lg font-semibold hover:bg-primary/90 transition-all hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Start Building Free
                 </a>
                 <a
                   href="/about"
-                  className="w-full sm:w-auto px-8 py-4 bg-muted text-foreground rounded-xl text-lg font-semibold hover:bg-muted/80 transition-all hover:scale-105"
+                  className="w-full sm:w-auto px-8 py-4 border-2 border-primary text-primary rounded-xl text-lg font-semibold hover:bg-primary/10 transition-all hover:scale-105"
                 >
                   See How It Works
                 </a>
@@ -150,8 +150,10 @@ export default function Home() {
                   key={index}
                   className="p-6 rounded-2xl border bg-card hover:border-primary/50 transition-all hover:shadow-lg group"
                 >
-                  <div className="text-primary mb-4 group-hover:scale-110 transition-transform">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                  <div className="text-primary mb-4 group-hover:scale-110 transition-transform">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-foreground">{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.description}</p>
                 </div>
               ))}
